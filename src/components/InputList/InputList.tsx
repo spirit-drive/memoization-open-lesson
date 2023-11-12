@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React from 'react';
 import cn from 'clsx';
 import { Input } from 'src/components/Input';
 import s from './InputList.sass';
@@ -17,15 +17,9 @@ export type InputListProps = {
 };
 
 export const InputList = ({ className, value, onChange }: InputListProps) => {
-  const valueCopy = useRef(value);
-  valueCopy.current = value;
-
-  const handleChange = useCallback(
-    (v: string, id: string) => {
-      onChange(valueCopy.current.map((i) => (i.id === id ? { id, value: v } : i)));
-    },
-    [onChange]
-  );
+  const handleChange = (v: string, id: string) => {
+    onChange(value.map((i) => (i.id === id ? { id, value: v } : i)));
+  };
 
   return (
     <div className={cn(s.root, className)}>
