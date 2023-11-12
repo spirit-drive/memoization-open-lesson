@@ -14,14 +14,14 @@ function App() {
 
   const action = () => setCount(0);
 
-  const options = useMemo(() => ({ test: 'Любой объект' }), []);
-  const array = useMemo(() => ['Любой массив'], []);
-  const callback = useCallback(() => console.log('Любая функция'), []);
+  const options = { test: 'Любой объект' };
+  const array = ['Любой массив'];
+  const callback = () => console.log('Любая функция');
 
   console.log('rerender App');
   return (
     <div className={s.root}>
-      <TargetComponent callback={callback} array={array} options={options} />
+      <TargetComponent />
       <button type="button" onClick={() => setCount((v) => v + 1)}>
         Увеличить счетчик {count}
       </button>

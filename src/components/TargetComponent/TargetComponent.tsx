@@ -10,7 +10,7 @@ export type TargetComponentProps = {
   callback?: () => void;
 };
 
-export const TargetComponent = memo<TargetComponentProps>(({ className }) => {
+export const TargetComponent = ({ className }: TargetComponentProps) => {
   console.log('rerender TargetComponent');
   return <div className={cn(s.root, className)}>TargetComponent</div>;
-});
+};
