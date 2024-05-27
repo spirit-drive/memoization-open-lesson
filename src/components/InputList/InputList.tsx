@@ -35,3 +35,33 @@ export const InputList = ({ className, value, onChange }: InputListProps) => {
     </div>
   );
 };
+
+// const ref = {
+//   current: '',
+// };
+//
+// let outSideCallback = (() => {}) as () => unknown;
+// let _deps: unknown[];
+//
+// const _useCallback = (callback: () => unknown, deps: unknown[]) => {
+//   if (JSON.stringify(deps) === JSON.stringify(_deps)) return outSideCallback;
+//   _deps = deps;
+//   outSideCallback = callback;
+//   return outSideCallback;
+// };
+//
+// const Component = (a: string) => {
+//   ref.current = a;
+//   const func1 = () => {
+//     console.log(ref.current);
+//   };
+//   const func = _useCallback(func1, []);
+//
+//   console.log(func === func1);
+//
+//   func();
+// };
+//
+// Component('1');
+// Component('s');
+// Component('232');
